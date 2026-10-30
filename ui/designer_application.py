@@ -1,4 +1,5 @@
 import dearpygui.dearpygui as dpg
+from .theme import apply_theme
 
 from core import EventBus
 from core.performance import PerformanceMonitor
@@ -37,6 +38,7 @@ class DesignerApplication:
         return True
 
     def initialize(self):
+        apply_theme()
         create_dockspace()
         self.designer.build()
         self.input_source = DpgInputSource()
